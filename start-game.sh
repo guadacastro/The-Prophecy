@@ -11,8 +11,7 @@ amulet=false
 
 function game_loop {
     current_path=$(pwd)
-    # echo $root_path
-    # echo $current_path
+
     cat "${current_path}/story"
     
     if [[ "$amulet" == false ]] && [[ "$key" == false ]] && [[ $PWD == "$root_path/Town_square/outskirts/cave/left" ]]; then
