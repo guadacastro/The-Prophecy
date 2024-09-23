@@ -86,15 +86,19 @@ You find that it was guarding some type of a key and decide to take it. (it migh
     fi
 
     if [[ $PWD == "$root_path/Town_square/castle" ]] && ([[ "$legendary_sword" = false ]] || [[ "$armor" = false ]]); then
-        echo "The Dragon's breath turns you to ashes.
+        echo "His breath turns you to ashes immediately.
 Perhaps your equipment is not strong enough.
 You died.
 You go back to the start (you can keep your stuff)"
         go "${root_path}/Town_square"
     elif [[ $PWD == "$root_path/Town_square/castle" ]] && [[ "$legendary_sword" = true ]] && [[ "$armor" = true ]]; then
-        echo "The Dragon is defeated.
-You have liberated the kingdom and become its rightful ruler!
-Under your watchful eye the country is now prospering."
+        echo "You grip your sword, dodging flames as his claws tear the earth.
+You can feel the heat of his breath as he spews fire, narrowly missing you...
+
+...You leap over his tail, dodging another strike, and see your chance. 
+With one final thrust, manage to defeat him. 
+The dragon collapses. 
+Exhausted but victorious, you stand over his fallen body, the battle won."
     fi 
 
 }
