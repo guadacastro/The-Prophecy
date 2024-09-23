@@ -61,14 +61,17 @@ It is good to have a self-defense tool.
     fi
 
     if [[ $PWD == "$root_path/Town_square/forest/wide-path" ]] && [[ "$shabby_sword" == false ]]; then
-        echo "You encounter a Ghoul but you don't have any weapon.
+        echo "Unfortunately, you couldn't fight him with bare fists.
 You died.
 You go back to the start (you can keep your stuff)"
         go "${root_path}/Town_square"
     elif [[ $PWD == "$root_path/Town_square/forest/wide-path" ]] && [[ "$shabby_sword" == true ]]; then
+    echo "After a couple minutes of struggle you managed to kill him! 
+Wait, there's something shiny on his body.
+It's a legendary sword!
+Without hesitation you decide to take it.
+(legendary sword obtained)"
         legendary_sword=true
-        echo "You managed to kill the Ghoul and found a legendary sword on him! 
-You decide to take it!"
     fi
 
     if [[ $PWD == "$root_path/Town_square/mountains/gorge" ]] && [[ "$legendary_sword" == false ]]; then 
