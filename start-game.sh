@@ -7,6 +7,8 @@ shabby_sword=false
 legendary_sword=false
 armor=false
 coins=0
+coins_front=true
+coins_right=true
 amulet=false
 
 function game_loop {
@@ -29,13 +31,16 @@ Try coming back later."
         armor=true
     fi
 
-    if [[ $PWD == "$root_path/Town_square/outskirts/cave/front" ]]; then
+    if [[ $PWD == "$root_path/Town_square/outskirts/cave/front" ]] && [[ "$coins_front" == true ]]; then
+        echo "You find a bunch of coins (50)!"
         coins=$((coins+50))
-
+        coins_front=false
     fi
 
-    if [[ $PWD == "$root_path/Town_square/outskirts/cave/right" ]]; then
+    if [[ $PWD == "$root_path/Town_square/outskirts/cave/right" ]] && [[ "$coins_right" == true ]]; then
+        echo "You find a bunch of coins (50)!"
         coins=$((coins+50))
+        coins_right=false
     fi
 
     if [[ $PWD == "$root_path/Town_square/outskirts/market/blacksmith" ]] && [[ "$coins" -lt 100 ]]; then
