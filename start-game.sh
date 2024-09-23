@@ -48,7 +48,9 @@ Try coming back later."
 Come back once you earn more (try searching the cave on the outskirts)"
         cd ..
     elif [[ $PWD == "$root_path/Town_square/outskirts/market/blacksmith" ]] && [[ "$coins" -ge 100 ]]; then
-        echo "TODO"
+        echo "Ultimately, you decide to buy it.
+It is good to have a self-defense tool.
+(shabby sword obtained)"
         shabby_sword=true
         coins=$((coins-100))
     fi
