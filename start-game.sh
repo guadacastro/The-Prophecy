@@ -15,7 +15,9 @@ function game_loop {
     cat "${current_path}/story"
     
     if [[ "$amulet" == false ]] && [[ "$key" == false ]] && [[ $PWD == "$root_path/Town_square/outskirts/cave/left" ]]; then
-        echo "The door is locked.\n You do not have the key for it and you aren't strong enough to break it.\n Try coming back later."
+        echo "The door is locked.
+        You do not have the key for it and you aren't strong enough to break it.
+        Try coming back later."
         cd ..
     elif [[ "$amulet" == true ]] && [[ $PWD == "$root_path/Town_square/outskirts/cave/left" ]]; then
         echo "You broke the door, congratulations!"
@@ -37,7 +39,8 @@ function game_loop {
     fi
 
     if [[ $PWD == "$root_path/Town_square/outskirts/market/blacksmith" ]] && [[ "$coins" -lt 100 ]]; then
-        echo "You see a blacksmith selling swords but you don't have anough money to buy one.\n Come back once you earn more (try searching the cave)"
+        echo "You see a blacksmith selling swords but you don't have anough money to buy one.
+        Come back once you earn more (try searching the cave on the outskirts)"
         cd ..
     elif [[ $PWD == "$root_path/Town_square/outskirts/market/blacksmith" ]] && [[ "$coins" -ge 100 ]]; then
         shabby_sword=true
@@ -49,25 +52,36 @@ function game_loop {
     fi
 
     if [[ $PWD == "$root_path/Town_square/forest/wide-path" ]] && [[ "$shabby_sword" == false ]]; then
-        echo "You encounter a Ghoul but you don't have any weapon.\n You died.\n You go back to the start (you can keep your stuff)"
+        echo "You encounter a Ghoul but you don't have any weapon.
+        You died.
+        You go back to the start (you can keep your stuff)"
         cd "${root_path}/Town_square"
     elif [[ $PWD == "$root_path/Town_square/forest/wide-path" ]] && [[ "$shabby_sword" == true ]]; then
         legendary_sword=true
-        echo "You managed to kill the Ghoul and found a legendary sword on him!\n You decide to take it!"
+        echo "You managed to kill the Ghoul and found a legendary sword on him! 
+        You decide to take it!"
     fi
 
     if [[ $PWD == "$root_path/Town_square/mountains/gorge" ]] && [[ "$legendary_sword" == false ]]; then 
-        echo "You see a Wyvern in front of you but you don't have a strong enough weapon to fight it.\n You died.\n You go back to the start (you can keep your stuff)"
+        echo "You see a Wyvern in front of you but you don't have a strong enough weapon to fight it.
+        You died.
+        You go back to the start (you can keep your stuff)"
         cd "${root_path}/Town_square"
     elif [[ $PWD == "$root_path/Town_square/mountains/gorge" ]] && [[ "$legendary_sword" = true ]]; then 
-        echo "You kill the Wyvern. \n You find that it was guarding some type of a key and decide to take it. (it might be helpful somewhere in the cave)"
+        echo "You kill the Wyvern.
+        You find that it was guarding some type of a key and decide to take it. (it might be helpful somewhere in the cave)"
         key=true
     fi
 
     if [[ $PWD == "$root_path/Town_square/castle" ]] && ([[ "$legendary_sword" = false ]] || [[ armor = false ]]); then
-        echo "The Dragon's breath turns you to ashes.\n Perhaps your equipment is not strong enough.\n You died.\n You go back to the start (you can keep your stuff)"
+        echo "The Dragon's breath turns you to ashes.
+        Perhaps your equipment is not strong enough.
+        You died.
+        You go back to the start (you can keep your stuff)"
     elif [[ $PWD == "$root_path/Town_square/castle" ]] && [[ "$legendary_sword" = true ]] || [[ armor = true ]]; then
-        echo "The Dragon is defeated.\n You have liberated the kingdom and become the rightful ruler!\n Under your watchful eye the country is now prospering."
+        echo "The Dragon is defeated.
+        You have liberated the kingdom and become the rightful ruler!
+        Under your watchful eye the country is now prospering."
     fi 
 
 }
