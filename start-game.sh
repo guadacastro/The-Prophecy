@@ -14,7 +14,7 @@ amulet=false
 function game_loop {
     current_path=$(pwd)
 
-    cat "${current_path}/story"
+    cat "${current_path}/.story"
     
     if [[ "$amulet" == false ]] && [[ "$key" == false ]] && [[ $PWD == "$root_path/Town_square/outskirts/cave/left" ]]; then
         echo "The door is locked.
